@@ -1,0 +1,15 @@
+.env
+logs/
+assets/uploads/level-images/*.jpg
+assets/uploads/level-images/*.jpeg
+assets/uploads/level-images/*.png
+assets/uploads/level-images/*.gif
+assets/uploads/level-images/*.webp
+assets/uploads/*.jpg
+assets/uploads/*.jpeg
+assets/uploads/*.png
+assets/uploads/*.gif
+assets/uploads/*.webp
+*.log
+.DS_Store
+Thumbs.db

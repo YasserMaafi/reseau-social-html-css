@@ -1,0 +1,48 @@
+composer.json QUICK SETUP (optional):
+{
+    "name": "learning-platform/app",
+    "description": "Full-stack JS & PHP Learning Platform",
+    "type": "project",
+    "require": {
+        "php": ">=8.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    }
+}
+
+QUICK INSTALLATION STEPS:
+
+1. Set up PostgreSQL database:
+   createdb learning_platform
+   psql learning_platform < config/schema.sql
+
+2. Configure environment:
+   cp .env.example .env
+   # Edit .env with your database credentials
+
+3. Run development server:
+   php -S localhost:8000 -t public/
+
+4. Access application:
+   - Main: http://localhost:8000
+   - Admin: http://localhost:8000/admin
+
+5. Create admin account:
+   - Register at http://localhost:8000/register.php
+   - Update in database: UPDATE users SET role='admin' WHERE username='your_username';
+
+6. Initialize achievements:
+   php -r "
+   require 'config/constants.php';
+   require 'src/DB.php';
+   require 'src/Achievement.php';
+   Achievement::initializeAchievements();
+   echo 'Achievements initialized!';
+   "
+
+DEFAULT TEST CREDENTIALS (set these up first):
+- Admin: admin / admin123
+- User: student / student123
